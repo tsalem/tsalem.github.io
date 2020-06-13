@@ -95,7 +95,7 @@
         <ul id="highlights">
          
 			<img src="img/visual_attributes.png" alt="Map of visual attributes over time" style="float:right" height="30%" width="40%">
-			<h4><li> Visual Attribute Maps</b></h4>
+			<h4><b><li> Visual Attribute Maps</b></h4>
 			We propose a general convolutional neural network (CNN) architecture that visual attributes with
 			overhead images, time, and geolocation. Several qualitative examples are shown in the figure on the right for different attributes over time.  
 			
@@ -110,7 +110,7 @@
 			ground-level images. In Figure 8, we show examples of
 			images retrieved using this process
 			
-			<br><br><br><br><br><br><br><br><br><br><br>
+			<br><br><br><br><br><br>
 						
 			<img src="img/image_loc.png" alt="Classifier Results" style="float:right" height="30%" width="40%">
 			<h4><b><li>Iamge Localization</b></h4>
@@ -118,29 +118,37 @@
 			we used 488,224 overhead images from CVUSA as our reference database. The heatmap represents 
 			the likelihood that an image was captured at a specific location, where red (blue) is more (less) likely.
 			
+			<br><br><br><br><br><br>
+						
+			<img src="img/metadata_verification.png" alt="Classifier Results" style="float:right" height="30%" width="40%">
+			<h4><b><li>Metadata Verification</b></h4>
+			We focus on verifying the time that an image, with known location, was captured. For a given ground-level image, 
+			we compute the distance between the actual and predicted attributes resulting in a distance for each possible time
+			The figure on the right shows heatmaps of these distances for one test examples, using our full model and the Combine distance
       		</ul>
 
 <h3><a name="papers"></a>Related Papers</h3>
   <ul>
   
-  <a href="papers/salem2018soundscape.pdf"> <p style="text-align:justify"><li>A Multimodal Approach to Mapping Soundscapes
-   </a>(Tawfiq Salem, Menghua Zhai, Scott Workman, Nathan Jacobs),
-  In: IEEE International Geoscience and Remote Sensing Symposium (IGARSS), 2018.</li></p> 
+  <a href="http://openaccess.thecvf.com/content_CVPR_2020/papers/Salem_Learning_a_Dynamic_Map_of_Visual_Appearance_CVPR_2020_paper.pdf"> <p style="text-align:justify"><li>Learning a Dynamic Map of Visual Appearance
+   </a>(Tawfiq Salem, Scott Workman, Nathan Jacobs),
+  In: IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2020.</li></p> 
   <div>
 	Bibtex:   
 	<pre width="30">
-@inproceedings{salem2018soundscape,
-	author = {Salem, Tawfiq and Zhai, Menghua and Workman, Scott and Jacobs, Nathan},
-	title = {A Multimodal Approach to Mapping Soundscapes},
-	year = {2018},
-	booktitle = {IEEE International Geoscience and Remote Sensing Symposium (IGARSS)},
-}
+	@inproceedings{salem2020dynamic,
+	  author = {Salem, Tawfiq and Workman, Scott and Jacobs, Nathan},
+	  booktitle = {{IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}},
+	  title = {{Learning a Dynamic Map of Visual Appearance}},
+	  year = {2020},
+
+	}
 	</pre>
 	</div>      
   </ul>
-  <h3><a name="dataset"></a>Dataset:</h3>
-  In our dataset, we have in total 15,773 geo-tagged audio files from FreeSound and their corresponding overhead
-	images.Please contact us by email to receive access to the database.
+  <h3><a name="dataset"></a>Cross-View Time (CVT) Dataset:</h3>
+  In our dataset, we have 305 011 ground-level images with the corresponding capture time and geolocation. 
+  For each image, we have the orthorectified overhead image centered on the geographic location.
 	
 
 
