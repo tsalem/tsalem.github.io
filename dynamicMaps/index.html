@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <title>Learning a Dynamic Map of Visual Appearance</title>
+    
+    <STYLE type=text/css media=all>
+      #mainmedia {
+        MARGIN-LEFT: auto; ;
+        WIDTH: expression(document.body.clientWidth > 895? "895px": "auto" );
+        MARGIN-RIGHT: auto;
+        TEXT-ALIGN: left;
+        max-width: 895px
+      }
+      h2
+      {
+         text-align: center
+      }
+		td{position:relative; z-index:0}
+		.bottomimg{position:absolute; top:0; left:0; z-index:1}
+		.topimg{position:absolute; top:0; left:0; z-index:2}
+			 
+    </STYLE>
+
+    
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="jumbotron.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div id=mainmedia class="jumbotron">
+      <div class="container">
+        <h2>Learning a Dynamic Map of Visual Appearance</h2>
+    <br>
+    <br>
+     <h3>Abstract:</h3>
+
+			The appearance of the world varies dramatically not only from place to place 
+			but also from hour to hour and month to month. Every day billions of images 
+			capture this complex relationship, many of which are associated with precise 
+			time and location metadata. We propose to use these images to construct a global-scale, 
+			dynamic map of visual appearance attributes. Such a map enables fine-grained understanding 
+			of the expected appearance at any geographic location and time. Our approach integrates 
+			dense overhead imagery with location and time metadata into a general framework capable 
+			of mapping a wide variety of visual attributes. A key feature of our approach is that it 
+			requires no manual data annotation. We demonstrate how this approach can support various applications, 
+			including image-driven mapping, image geolocalization, and metadata verification. 
+
+<p align="center">
+Video: Dynamic Mapping.
+</p>
+ 
+
+    <div class="row" id="game-images" style="text-align:center;padding:0;margin:0">
+        <div class="containere" id="image-containexr">
+           <video width="630" height="360" controls>
+                 <source src="384-1min.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+<hr>
+
+<h3>People:</h3>
+
+    <div class="row">
+    <div class="col-md-5">
+     <ul id=people>
+		<li><a href="http://tsalem.github.io/">Tawfiq Salem</a>
+	  <li><a href="http://cs.uky.edu/~ted/">Menghua Zhai</a>
+		<li><a href="http://cs.uky.edu/~scott/">Scott Workman</a>
+    <li><a href="http://cs.uky.edu/~jacobs/">Nathan Jacobs</a>
+      </ul>
+    </div>
+    
+  </div>
+
+
+ <h3>Highlights:</h3>
+
+        <ul id="highlights">
+         
+			<img src="img/cartoon_combine.png" alt="CCA/PCA Faces" style="float:right" height="30%" width="40%">
+			<h4><li>Learning a Shared Feature Space</b></h4>
+			We propose a convolutional neural network (CNN) architecture that relates sounds with
+			co-located ground, and overhead images. Using the trained model, 
+			We extract the output distribution over scene categories and identify the closest sounds
+			in CVS and the closest ground-level images in CVUSA, using 
+			KL-divergence. Several qualitative examples are shown in the figure on the right, 
+			also the video above have more results.  
+			
+            <br><br><br><br><br><br><br>
+			<img src="img/combine_preds.png" alt="CCA/PCA Faces" style="float:right" height="30%" width="40%">
+            <h4><b><li>Predicting Sound Clusters from Overhead Imagery</b></h4>
+			We assign each sound to a unique cluster and treat the
+			cluster assignment, ci, as the label of a given location, li.
+			For each location, we obtain the co-located overhead image, 
+			I(li) and train a CNN to predict the sound cluster, ci,
+			from the image as shown in the right figure.
+			
+			<br><br><br><br><br><br><br><br><br><br><br>
+						
+			<img src="img/combine.png" alt="Classifier Results" style="float:right" height="30%" width="40%">
+			<h4><b><li>Visualizing An Aural Atlas</b></h4>
+			Using the trained CNN model to predict a distribution
+			over sound clusters from an overhead image enables us to
+			construct sound maps at various spatial scales. 
+			<br><br><b>Block Level:</b>
+			For every pixel in the image on the right image of the top row, we downloaded the correspond-
+			ing overhead image and used our network to predict the distribution over sound clusters. We show the
+			results of our approach in the right column, as a per-pixel labeling where the color represents 
+			the most likely sound cluster (e.g., blue = water-related sounds and orange = traffic
+			sounds). The color coding is the same for the next two spatial scales.
+			<br><br><b>City Level:</b>
+			Here we apply the same technique to a larger geographic area. 
+			The middle row in the right Figure shows the aural atlas for a portion
+			of New York City. Note how the majority of the urban areas are colored orange and 
+			the water areas are dark blue.
+			<br><br><b>Country Level:</b>
+			We demonstrate the results of our method at the country level. We used 500,000 overhead
+			images randomly sampled from the CVUSA dataset and extracted the sound cluster prediction with our trained model.
+			the bottom row in the right figure shows the results over USA.
+      			</ul>
+
+<h3><a name="papers"></a>Related Papers</h3>
+  <ul>
+  
+  <a href="papers/salem2018soundscape.pdf"> <p style="text-align:justify"><li>A Multimodal Approach to Mapping Soundscapes
+   </a>(Tawfiq Salem, Menghua Zhai, Scott Workman, Nathan Jacobs),
+  In: IEEE International Geoscience and Remote Sensing Symposium (IGARSS), 2018.</li></p> 
+  <div>
+	Bibtex:   
+	<pre width="30">
+@inproceedings{salem2018soundscape,
+	author = {Salem, Tawfiq and Zhai, Menghua and Workman, Scott and Jacobs, Nathan},
+	title = {A Multimodal Approach to Mapping Soundscapes},
+	year = {2018},
+	booktitle = {IEEE International Geoscience and Remote Sensing Symposium (IGARSS)},
+}
+	</pre>
+	</div>      
+  </ul>
+  <h3><a name="dataset"></a>Dataset:</h3>
+  In our dataset, we have in total 15,773 geo-tagged audio files from FreeSound and their corresponding overhead
+	images.Please contact us by email to receive access to the database.
+	
+
+
+
+  </body>
+</html>
