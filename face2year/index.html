@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <title>Analyzing Human Appearance as a Cue for Dating Images</title>
+    
+    <STYLE type=text/css media=all>
+      #mainmedia {
+        MARGIN-LEFT: auto; ;
+        WIDTH: expression(document.body.clientWidth > 895? "895px": "auto" );
+        MARGIN-RIGHT: auto;
+        TEXT-ALIGN: left;
+        max-width: 895px
+      }
+      h2
+      {
+         text-align: center
+      }
+    </STYLE>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="jumbotron.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div id=mainmedia class="jumbotron">
+      <div class="container">
+        <h2>Analyzing Human Appearance as a Cue for Dating Images</h2>
+    <br>
+    <br>
+        <img src="img/dataset.png" alt="Geofaces" width="100%" height="100%">
+        <h3>Abstract:</h3>
+        Given an image, we propose to use the appearance of people in the scene to estimate when the picture was taken.
+		There are a wide variety of cues that can be used to address this problem. Most previous work has focused on low-level
+		image features, such as color and vignetting. Recent work on image dating has used more semantic cues, such as the
+		appearance of automobiles and buildings. We extend this line of research by focusing on human appearance. Our approach,
+		based on a deep convolutional neural network, allows us to more deeply explore the relationship between human
+		appearance and time. We find that clothing, hair styles, and glasses can all be informative features. To support our
+		analysis, we have collected a new dataset containing images of people from many high school yearbooks, covering
+		the years 1912-2014. While not a complete solution to the problem of image dating, our results show that human appearance
+		is strongly related to time and that semantic information can be a useful cue.
+
+    <h3>People:</h3>
+
+    <div class="row">
+    <div class="col-md-5">
+     <ul id=people>
+        University of Kentucky
+             
+		<li><a href="http://cs.uky.edu/~jacobs/">Nathan Jacobs</a>
+		<li><a href="http://cs.uky.edu/~salem/">Tawfiq Salem</a>
+		<li><a href="http://cs.uky.edu/~scott/">Scott Workman</a>
+		<li><a href="http://cs.uky.edu/~ted/">Menghua Zhai</a>
+      </ul>
+    </div>
+    
+  </div>
+
+
+  <h3>Highlights:</h3>
+
+        <ul id="highlights">
+         
+			<img src="img/estimate_year.png" alt="CCA/PCA Faces" style="float:right" height="30%" width="40%">
+			<h4><li>From Human Appearance to Year</b></h4>
+			
+			 We take a discriminative approach to learn the relationship
+			between human appearance and the year. Specifically, we learn to predict the year an image was captured using a
+			deep convolutional neural network (CNN). We train three different color-based networks face2year, torso2year, and patch2year, 
+			and also we train additional three grayscale_based networks gray_face2year, gray_torso2year, and gray_patch2year 
+			by replacing the color input images with grayscale images.
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+			<img src="img/sensitivity_analysis.png" alt="CCA/PCA Faces" style="float:right" height="30%" width="40%">
+            <h4><b><li>Image Dependent Sensitivity Analysis</b></h4>
+			
+			To better understand what our networks have learned, we
+			perform a form of sensitivity analysis that highlight regions of the image
+			(unoccluded) that have the largest impact on the predicted distribution over years. Occluded image regions have little
+			impact on the prediction.
+			<br><br><br><br><br><br><br>
+						
+			<img src="img/people_over_time.png" alt="Classifier Results" style="float:right" height="30%" width="40%">
+			<h4><b><li>Quantitative Evaluation</b></h4>
+			
+			 We evaluated the quantitative and qualitative properties
+			 of our trained models. In one of our experiments, we found for every fifth year the five individuals with the most confident predictions to be
+			 from that year. For example, the top row int he figure at the right contains three
+			 women and two men for which the network has the greatest
+			 confidence that they are from 1965. The trained networks seems to have identified differences in shirt collars
+			 and hair styles that are typical of the respective eras. 
+			<br><br><br>
+			
+				
+			  
+			
+        </ul>
+
+
+		
+  <h3><a name="papers"></a>Related Papers</h3>
+  <ul>
+  
+  <a href="papers/salem2016face2year.pdf"> <p style="text-align:justify"><li> Analyzing Human Appearance as a Cue for Dating Images</a>
+   (Tawfiq Salem, Scott Workman, Menghua Zhai,Nathan Jacobs),
+   In IEEE Winter Conference on Applications of Computer Vision (WACV), 2016.</li></p> 
+  <div>
+     
+	Bibtex:
+  
+ <pre width="30"> 
+@inproceedings{salem2016face2year,
+ author = {Salem, Tawfiq and Workman, Scott and Zhai, Menghua and Jacobs, Nathan},
+ title = {Analyzing Human Appearance as a Cue for Dating Images},
+ booktitle = {{IEEE Winter Conference on Applications of Computer Vision (WACV)}},
+ year = {2016},
+ annotation = {geofaces,contextualeyes},
+ pages = {1--8}
+}
+  </pre>
+  </div>
+	        
+    </ul>
+
+    <h3><a name="dataset"></a>Dataset:</h3>
+
+    In our dataset, we have in total 719 229 images of face patches, and 565 069 images of torso patches. Please contact us by email to receive access to the database.
+	
+	
+
+    <h3><a name="Models"></a>Models:</h3>
+
+    <a href="models/face2year.caffemodel">face2year</a> <br /> 
+    <a href="models/torso2year.caffemodel">torso2year</a> 
+
+     
+	
+	  <h3><a name="See Also"></a>See Also:</h3>
+
+    The work of <a href="http://www.eecs.berkeley.edu/~shiry/projects/yearbooks/yearbooks.html">Ginosar et al.</a> was developed concurrently and independently from our work. They use yearbook imagery and 
+	apply weakly-supervised data-driven techniques to analyze appearance trends.   
+
+      </div>
+    </div>
+	
+
+      <footer>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-34268917-3', 'auto');
+ga('send', 'pageview');
+</script>
+
+  </body>
+</html>
