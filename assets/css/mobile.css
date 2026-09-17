@@ -1,0 +1,32 @@
+/* Mobile-friendly overrides for tsalem.github.io */
+@media (max-width: 768px) {
+  .masthead__inner-wrap { padding: .65rem 1rem; }
+  .greedy-nav { display: flex; align-items: center; justify-content: space-between; position: relative; }
+  .greedy-nav .visible-links { display: flex; align-items: center; margin: 0; }
+  .greedy-nav .visible-links li:not(.masthead__menu-item--lg) { display: none; }
+  .greedy-nav button { display: block !important; visibility: visible !important; opacity: 1 !important; margin-left: auto; border: 0; background: transparent; cursor: pointer; padding: .6rem; z-index: 1002; }
+  .greedy-nav .navicon, .greedy-nav .navicon::before, .greedy-nav .navicon::after { display: block; width: 24px; height: 3px; background: #333; position: relative; transition: .2s ease; }
+  .greedy-nav .navicon::before, .greedy-nav .navicon::after { content: ''; position: absolute; left: 0; }
+  .greedy-nav .navicon::before { top: -7px; }
+  .greedy-nav .navicon::after { top: 7px; }
+  .greedy-nav.mobile-open .navicon { background: transparent; }
+  .greedy-nav.mobile-open .navicon::before { top: 0; transform: rotate(45deg); }
+  .greedy-nav.mobile-open .navicon::after { top: 0; transform: rotate(-45deg); }
+  .greedy-nav .hidden-links { display: none !important; }
+  .greedy-nav.mobile-open .mobile-menu { display: block; }
+  .mobile-menu { display: none; position: absolute; top: calc(100% + .55rem); right: 0; width: min(280px, calc(100vw - 2rem)); margin: 0; padding: .4rem 0; list-style: none; background: #fff; border: 1px solid #ddd; border-radius: 6px; box-shadow: 0 8px 24px rgba(0,0,0,.15); z-index: 1001; }
+  .mobile-menu li { margin: 0; }
+  .mobile-menu a { display: block; padding: .85rem 1rem; text-decoration: none; }
+  .mobile-menu a:hover, .mobile-menu a:focus { background: #f5f5f5; }
+  #main { padding-left: 1rem; padding-right: 1rem; }
+  .sidebar { width: 100% !important; float: none !important; position: static !important; margin-bottom: 1.5rem; text-align: center; }
+  .author__avatar { display: block; margin-left: auto; margin-right: auto; }
+  .author__avatar img, img.author__avatar { max-width: 150px !important; width: 150px !important; height: auto !important; }
+  .author__urls-wrapper { text-align: center; }
+  article.page { width: 100% !important; float: none !important; padding: 0 !important; }
+  .page__inner-wrap { width: 100% !important; }
+  .page__content { font-size: 1rem; line-height: 1.65; }
+  .page__title { font-size: 1.7rem; }
+  .page__content img { max-width: 100%; height: auto; }
+  .history-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
